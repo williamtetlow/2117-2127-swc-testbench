@@ -1,0 +1,28 @@
+{
+  "name": "2117-2127-swc-testbench",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:all": "npm run build:babel && npm run build:esbuild && npm run build:swc && npm run build:ts:esnext && npm run build:ts:es6",
+    "build:babel": "babel src --out-dir out/babel --extensions \".ts,.tsx\"",
+    "build:esbuild": "esbuild --outdir=out/esbuild --target=es6 ./src/2117.ts ./src/2127.ts",
+    "build:swc": "swc src -d out/swc --config-file ./.swcrc",
+    "build:ts:esnext": "tsc --outDir out/ts-esnext",
+    "build:ts:es6": "tsc --outDir out/ts-es6 --target es6",
+    "evaluate-outputs": "node evaluate-outputs.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.0",
+    "@babel/plugin-proposal-decorators": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@swc/cli": "^0.1.55",
+    "@swc/core": "^1.2.136",
+    "esbuild": "^0.14.18",
+    "typescript": "^4.5.5"
+  }
+}
