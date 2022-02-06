@@ -16,6 +16,9 @@ for (const output of outputs) {
   results[output] = { 2117: output2117, 2127: output2127 };
 }
 
+console.log("2117 should be 'true'");
+console.log("2127 should return 'asdasd'");
+
 console.table(results);
 
 async function runCmd(cmd, args = []) {
